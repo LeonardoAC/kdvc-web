@@ -1,0 +1,154 @@
+/*
+-------------------------------
+caixa de opcoes "PROVISORIO"
+-------------------------------
+*/
+.divCaixaOpcoes{
+  position: absolute;
+  margin: 0px;
+  top: 0px;
+  font-family: verdana, courier;
+  font-size: 15px;
+  border: solid 4px black;
+  width: 200px;
+  background-color: gray;
+}
+
+.divCaixaOpcoes h1{
+  font-size: 16px;
+  font-stretch: expanded;
+  text-align: center;
+  color: black;
+}
+
+.divCaixaOpcoes ul{
+  list-style: none;
+}
+
+.divCaixaOpcoes #ul-font li, #ul-bg li{
+  float: left;
+  display: flex;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.divCaixaOpcoes #span-bg{
+  float: left;
+  display: flex;
+}
+
+.divCaixaOpcoes #span-font{
+  float: left;
+  display: flex;
+}
+
+.divCaixaOpcoes #li-bg1{
+    background-color: #2F9599;
+    color: #2F9599;
+}
+
+.divCaixaOpcoes #li-bg2{
+    background-color: #A7226E;
+    color: #A7226E;
+}
+
+.divCaixaOpcoes #li-bg3{
+    background-color: #EC2049;
+    color: #EC2049;
+}
+
+.divCaixaOpcoes #li-bg4{
+    background-color: #F7DB4F;
+    color: #F7DB4F;
+}
+
+.divCaixaOpcoes #li-bg5{
+    background-color: #F26B38;
+    color: #F26B38;
+}
+.divCaixaOpcoes #li-bg6{
+    background-color: #A8A7A7;
+    color: #A8A7A7;
+}
+.divCaixaOpcoes #li-bg7{
+    background-color: #FF4E50;
+    color: #FF4E50;
+}
+.divCaixaOpcoes #li-bg8{
+    background-color: #F9D423;
+    color: #F9D423;
+}
+.divCaixaOpcoes #li-bg9{
+    background-color: #E1F5C4;
+    color: #E1F5C4;
+}
+.divCaixaOpcoes #li-bg10{
+    background-color: #E5FCC2;
+    color: #E5FCC2;
+}
+.divCaixaOpcoes #li-bg11{
+    background-color: #45ADA8;
+    color: #45ADA8;
+}
+.divCaixaOpcoes #li-bg12{
+    background-color: #FE4365;
+    color: #FE4365;
+}
+
+.divCaixaOpcoes #li-fon1{
+    background-color: #2F9599;
+    color: #2F9599;
+}
+
+.divCaixaOpcoes #li-fon2{
+    background-color: #A7226E;
+    color: #A7226E;
+}
+
+.divCaixaOpcoes #li-fon3{
+    background-color: #EC2049;
+    color: #EC2049;
+}
+
+.divCaixaOpcoes #li-fon4{
+    background-color: #F7DB4F;
+    color: #F7DB4F;
+}
+
+.divCaixaOpcoes #li-fon5{
+    background-color: #F26B38;
+    color: #F26B38;
+}
+.divCaixaOpcoes #li-fon6{
+    background-color: #A8A7A7;
+    color: #A8A7A7;
+}
+.divCaixaOpcoes #li-fon7{
+    background-color: #FF4E50;
+    color: #FF4E50;
+}
+.divCaixaOpcoes #li-fon8{
+    background-color: #F9D423;
+    color: #F9D423;
+}
+.divCaixaOpcoes #li-fon9{
+    background-color: #E1F5C4;
+    color: #E1F5C4;
+}
+.divCaixaOpcoes #li-fon10{
+    background-color: #E5FCC2;
+    color: #E5FCC2;
+}
+.divCaixaOpcoes #li-fon11{
+    background-color: #45ADA8;
+    color: #45ADA8;
+}
+.divCaixaOpcoes #li-fon12{
+    background-color: #FE4365;
+    color: #FE4365;
+}
+
+.divCaixaOpcoes a{
+  text-decoration: none;
+  color: black;
+}

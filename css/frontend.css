@@ -1,0 +1,222 @@
+/*
+Leonardo A Carrilho
+2020, September
+*/
+
+/* -------------------------------
+
+        Uso geral | general use
+        Para todas as pages
+
+------------------------------- */
+
+:root{
+  /* Declaracao de variaveis */
+  --varBgColor: #2274a5; /*#0f0064;*/
+  --varFontColor: #e2bb56; /*#00f064;*/
+  --varFontDefault: "roboto";
+  --varFontSizeDefault: 30px;
+  --varTextoSombreado: 2px 2px #000;
+}
+
+*{
+  top: 0;
+  left: 0;
+}
+
+body{
+  background-color: var(--varBgColor);
+  color: var(--varFontColor);
+  font-family: var(--varFontDefault);
+  font-size: var(--varFontSizeDefault);
+
+  -webkit-font-family: var(--varFontDefault);
+  -webkit-font-size: var(--varFontSizeDefault);
+}
+
+a:link{
+  color: var(--varFontColor);
+  text-decoration: none;
+}
+
+a:visited{
+  color: var(--varFontColor);
+  text-decoration: none;
+}
+
+a:active{
+  color: var(--varFontColor);
+  text-decoration:none;
+}
+
+a:hover{
+  color: var(--varFontColor);
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+input{
+  color: var(--varFontColor);
+  font-size: 40px;
+  /*background-color: var(--varBgColor);*/
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: var(--varFontColor) solid 2px;
+  text-align: center;
+  /*text-shadow: var(--varTextoSombreado);*/
+
+  -webkit-border-top: none;
+  -webkit-border-left: none;
+  -webkit-border-right: none;
+  -webkit-border-bottom: var(--varFontColor) solid 2px;
+  -webkit-appearance: none; /* desmacha as formatacoes do iphone (bordas, background-color nos inputs) */
+}
+
+.divMain{
+  text-align: center;
+}
+
+/* -------------------------------
+
+          LOGIN PAGE
+
+------------------------------- */
+
+body#body-capa{
+  /* show background picture on login screen */
+  background-image: url("/img/teste1.png");
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes chacoalha{
+  /*
+  Movimenta os campos de um lado para outro para chamar a atencao do user
+  */
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(100px); }
+}
+
+.chacoalhaCampo{
+  /*
+  Esta classe é chamada em tempo de execucao pelo arquivo call.js
+  */
+  animation: chacoalha 0.1s;
+  animation-direction: alternate;
+  animation-iteration-count: 6;
+}
+
+.divLogin{
+  /**/
+  position: relative;
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 5px 5px 10px 5px #000;
+  padding: 4px;
+}
+
+label#divLogin-label-title{
+  font-size: 100px;
+  text-shadow: var(--varTextoSombreado);
+}
+
+.divLogin-button{
+  border-style: none;
+  font-size: 80%;
+}
+
+#span-msg{
+  display: none;
+  border: solid 1px yellow;
+  background-color: tomato;
+  color: yellow;
+  line-height: 100px;
+  width: 100%;
+}
+
+#btnSend{
+  background-color: #49E20E;
+  color: #fff;
+  border: var(--varFontColor) solid 2px;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* -------------------------------
+
+        MAIN PAGE
+
+------------------------------- */
+
+.divPhotos img{
+  width: 30%;
+  height: 300px;
+  border: white 2px solid;
+}
+
+/* -------------------------------
+
+        PROFILE PAGE
+
+------------------------------- */
+
+div.divForms{
+  width:40%;
+  margin-left: 30%;
+}
+
+ul#ulPhoto li{
+  border: var(--varFontColor) solid 2px;
+}
+
+li#ulPhoto-small img{
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+
+
+/*
+https://code-boxx.com/simple-css-bounce-effect/
+https://uicookies.com/css-input-text/
+*/
