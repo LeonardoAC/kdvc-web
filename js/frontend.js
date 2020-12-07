@@ -22,13 +22,14 @@ function inputShowHideLogin(){
   if ( txtEml.hidden == false ){
     btnSend.value = "Enviar reset de senha";
     btnForgot.value = "Voltar";
-  }else{
+  } else {
     btnSend.value = "Entrar";
     btnForgot.value = "Esqueci a senha";
   }
 
 }
 
+/*
 function mudaFonte(num){
   switch (num) {
     case 1:
@@ -65,4 +66,15 @@ function mudaCorFonte(corHexa){
       document.getElementsByTagName("input")[i].style.color = corHexa;
       document.getElementsByTagName("input")[i].style.borderColor = corHexa;
   } // for
+}
+*/
+
+function backgroundRandomNoLogin(maxInteger){
+  let imgIndex = Math.floor(Math.random() * maxInteger + 1);
+  document.body.style['background-image'] = 'url("/img/cover/'+imgIndex+'.png")';
+}
+
+function showPage(pageName){
+  // Show required page
+  window.location.href = "/"+ pageName +".html";
 }

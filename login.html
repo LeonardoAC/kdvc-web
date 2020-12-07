@@ -2,26 +2,26 @@
 <html lang="pt-BR" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>KD?VC</title>
+    <title>kd?vc</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/frontend.css">
-    <link rel="stylesheet" href="fonts/roboto/roboto.css">
+    <link rel="stylesheet" href="css/frontend.css" type="text/css">
+    <link rel="stylesheet" href="font/roboto/roboto.css" type="fonts">
     <script src="js/frontend.js"></script>
-    <script src="js/call.js"></script>
+    <script src="js/controller.js"></script>
   </head>
-  <body id="body-capa">
+  <body id="body-capa" onload="backgroundRandomNoLogin(8);">
     <div class="divMain">
       <div class="divLogin">
         <form id="form-login" method="post" action="#">
             <p><label id="divLogin-label-title">KD?VC</label></p>
             <span id="span-msg"><!-- Errors message here --></span>
-            <p><input id="txtId"  type="text"  placeholder="e-mail" value=""  tabindex="0"></p>
-            <p><input id="txtPass"  type="password"  placeholder="senha" value=""  tabindex="1"></p>
-            <p><input id="txtEml"  type="email"  placeholder="e-mail de recuperação" hidden></p>
-            <p><input id="btnSend" type="button"  value="Entrar"  tabindex="2" onclick="javascript:send()"></p>
+            <p><input id="id"       type="text"      value=""  placeholder="e-mail"  tabindex="4" required></p>
+            <p><input id="pass"     type="password"  value=""  placeholder="senha"   tabindex="5" required></p>
+            <p><input id="email"    type="email"     value=""  placeholder="e-mail de recuperação" hidden></p>
+            <p><input id="btnSend"  type="button"    value="Entrar"  tabindex="7" onclick="javascript:send('POST', 'contact/login', 'main', 'form-login')"></p>
             <div class="divSignup">
-              <p><input type="button" class="divLogin-button" id="btnNew" value="Cadastrar-me" tabindex="3"></p>
-              <p><input type="button" class="divLogin-button" id="btnForgot"   value="Esqueci a senha" onclick="inputShowHideLogin()" tabindex="4"></p>
+              <p><input type="button" class="divLogin-button" id="btnNew"     value="Cadastrar-me"     onclick="javascript:showPage('prospect')" tabindex="6" ></p>
+              <p><input type="button" class="divLogin-button" id="btnForgot"  value="Esqueci a senha"  onclick="javascript:inputShowHideLogin()" tabindex="5"></p>
             </div>
       </form>
       </div>

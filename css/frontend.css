@@ -12,11 +12,11 @@ Leonardo A Carrilho
 
 :root{
   /* Declaracao de variaveis */
-  --varBgColor: #2274a5; /*#0f0064;*/
-  --varFontColor: #e2bb56; /*#00f064;*/
-  --varFontDefault: "roboto";
+  --varBgColor: #efffc8; /*#0f0064;*/
+  --varFontColor: #3b341f;/*#e2bb56; /*#00f064;*/
+  --varFontDefault: "roboto", tahoma, verdana;
   --varFontSizeDefault: 30px;
-  --varTextoSombreado: 2px 2px #000;
+  --varTextoSombreado: 2px 2px #efffc8;
 }
 
 *{
@@ -81,6 +81,12 @@ input{
   text-align: center;
 }
 
+span#complement{
+  /* texto complementar nos inputs */
+  color: gray;
+  font-size: 14px;
+}
+
 /* -------------------------------
 
           LOGIN PAGE
@@ -89,7 +95,7 @@ input{
 
 body#body-capa{
   /* show background picture on login screen */
-  background-image: url("/img/teste1.png");
+  /*background-image: url("/img/cover/8.png"); gerado por backgroundRandomNoLogin() */
   opacity: 0.9;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,9 +141,9 @@ label#divLogin-label-title{
 
 #span-msg{
   display: none;
-  border: solid 1px yellow;
-  background-color: tomato;
-  color: yellow;
+  border: solid 2px #ffcc00;
+  background-color: tomato; /* #efffc8; */
+  color: #ffcc00;
   line-height: 100px;
   width: 100%;
 }
@@ -147,8 +153,8 @@ label#divLogin-label-title{
   color: #fff;
   border: var(--varFontColor) solid 2px;
   border-radius: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 /* -------------------------------

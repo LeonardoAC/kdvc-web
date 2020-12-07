@@ -3,17 +3,35 @@
   <head>
     <link rel="stylesheet" href="css/frontend.css">
     <meta charset="utf-8">
-    <title>KD?VC</title>
+    <title>kd?vc</title>
+    <script src="js/frontend.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/controller.js"></script>
   </head>
   <body>
     <div class="divMain">
+
+      <div class="divMain-navbar">
+        <nav>
+          <ul>
+            <li><a href="#" onclick="javascript:send('GET', 'contact/contacts', 'contacts', '');">Contacts</a></li>
+            <li><a href="#" onclick="javascript:send('GET', 'contact/contacts', 'contacts', '');">Profile</a></li>
+            <li><a href="#" onclick="javascript:deleteSession();">Logoff</a></li>
+          </ul>
+        </nav>
+      </div>
+
       <div class="divPhotos">
+          <!-- Show the redores -->
           <a href="#"><img src="pics/user1.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user2.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user3.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user4.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user5.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user6.jpg" alt="" title="User photo"></a>
+          <a href="#"><img src="pics/user7.jpg" alt="" title="User photo"></a>
+          <a href="#"><img src="pics/user9.jpg" alt="" title="User photo"></a>
+          <a href="#"><img src="pics/user11.jpg" alt="" title="User photo"></a>
       </div>
     </div>
   </body>
