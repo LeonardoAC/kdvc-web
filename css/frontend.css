@@ -2,6 +2,9 @@
 Leonardo A Carrilho
 2020, September
 */
+@media screen
+  and (min-device-width: 640px)
+  and (max-device-width: 1500px){
 
 /* -------------------------------
 
@@ -78,13 +81,24 @@ input{
 }
 
 .divMain{
-  text-align: center;
+  /* A.K.A. Container */
+  display: flex;
+  justify-content: center;
 }
 
 span#complement{
   /* texto complementar nos inputs */
   color: gray;
   font-size: 14px;
+}
+
+.divForms h2{
+  margin:auto;
+  color: #247BA0;
+  /*border: 2px solid #247BA0;
+  background-color: #70C1B3;*/
+  border-radius: 25px 0px 25px 0px;
+  padding: 5px;
 }
 
 /* -------------------------------
@@ -95,7 +109,7 @@ span#complement{
 
 body#body-capa{
   /* show background picture on login screen */
-  /*background-image: url("/img/cover/8.png"); gerado por backgroundRandomNoLogin() */
+  background-image: url("/img/cover/8.png"); /* DESATIVADO POR CAUSA DA @mediaquerie gerado por backgroundRandomNoLogin() */
   opacity: 0.9;
   background-repeat: no-repeat;
   background-size: cover;
@@ -120,13 +134,17 @@ body#body-capa{
 
 .divLogin{
   /**/
-  position: relative;
-  margin-left: 25%;
+  margin:auto;
   width: 50%;
   border-radius: 30px;
   background-color: white;
   box-shadow: 5px 5px 10px 5px #000;
   padding: 4px;
+  text-align: center;
+}
+
+.divSignup{
+  margin:auto;
 }
 
 label#divLogin-label-title{
@@ -135,6 +153,7 @@ label#divLogin-label-title{
 }
 
 .divLogin-button{
+  margin:auto;
   border-style: none;
   font-size: 80%;
 }
@@ -164,6 +183,7 @@ label#divLogin-label-title{
 ------------------------------- */
 
 .divPhotos img{
+  margin:auto;
   width: 30%;
   height: 300px;
   border: white 2px solid;
@@ -175,9 +195,11 @@ label#divLogin-label-title{
 
 ------------------------------- */
 
-div.divForms{
-  width:40%;
-  margin-left: 30%;
+.divForms{
+  margin:auto;
+  text-align: center;
+  width:70%;
+  /*border: solid 1px #FF1654;*/
 }
 
 ul#ulPhoto li{
@@ -220,9 +242,63 @@ li#ulPhoto-small img{
   cursor: pointer;
 }
 
+/* -------------------------------
+
+        PROSPECT PAGE
+
+------------------------------- */
+
+.pictureBevel img{
+  /* chanfro da imagem e posiciona label */
+  margin:auto;
+  border-radius: 0 25% 0 25%;
+  width: 100%;
+}
+
+.pictureBevel label{
+  margin:auto;
+  width: 50%;
+  top: 200px;
+  background-color: #FF1654;
+  border: solid 2px #FF1654;
+}
+
+}/* media querie laptop */
+
+@media screen
+  and (min-device-width: 280px)
+  and (max-device-width: 640px){
+
+body{
+  background-color: #F3FFBD;
+}
 
 
-/*
-https://code-boxx.com/simple-css-bounce-effect/
+
+} /* media querie mobile */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- Bibliograph ----------------------
+
+chacoalhaCampo: https://code-boxx.com/simple-css-bounce-effect/
 https://uicookies.com/css-input-text/
+media queries: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
 */

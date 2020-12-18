@@ -15,10 +15,10 @@
         <form id="form-login" method="post" action="#">
             <p><label id="divLogin-label-title">KD?VC</label></p>
             <span id="span-msg"><!-- Errors message here --></span>
-            <p><input id="id"       type="text"      value=""  placeholder="e-mail"  tabindex="4" required></p>
-            <p><input id="pass"     type="password"  value=""  placeholder="senha"   tabindex="5" required></p>
+            <p><input id="id"       type="text"      value="nonato"  placeholder="e-mail"  tabindex="4" required></p>
+            <p><input id="pass"     type="password"  value="non123"  placeholder="senha"   tabindex="5" required></p>
             <p><input id="email"    type="email"     value=""  placeholder="e-mail de recuperação" hidden></p>
-            <p><input id="btnSend"  type="button"    value="Entrar"  tabindex="7" onclick="javascript:send('POST', 'contact/login', 'main', 'form-login')"></p>
+            <p><input id="btnSend"  type="button"    value="Entrar"  tabindex="7" onclick="javascript:send('POST', 'contact/login', 'main', 'error', 'form-login', null)"></p>
             <div class="divSignup">
               <p><input type="button" class="divLogin-button" id="btnNew"     value="Cadastrar-me"     onclick="javascript:showPage('prospect')" tabindex="6" ></p>
               <p><input type="button" class="divLogin-button" id="btnForgot"  value="Esqueci a senha"  onclick="javascript:inputShowHideLogin()" tabindex="5"></p>

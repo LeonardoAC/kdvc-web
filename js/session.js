@@ -17,12 +17,17 @@ function checkSession(){
 function deleteSession(){
   sessionStorage.removeItem("sessid");
   sessionStorage.clear();
-  // refresh page
-  //window.location.replace("/login.html");
+  start();
+  // **********************************
+  // ATENCAO - CRIAR XHTML Ajax pra destruir a sessao no server side
 }
 
-if (checkSession() == false){
-  // Nao possui sessao
-  // Direciona para o login
-  window.location.replace("/login.html");
+function start(){
+  if (checkSession() == false){
+    // Nao possui sessao
+    // Direciona para o login
+    window.location.replace("/login.html");
+  }
 }
+
+start();

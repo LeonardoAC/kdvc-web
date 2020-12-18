@@ -14,8 +14,9 @@
       <div class="divMain-navbar">
         <nav>
           <ul>
-            <li><a href="#" onclick="javascript:send('GET', 'contact/contacts', 'contacts', '');">Contacts</a></li>
-            <li><a href="#" onclick="javascript:send('GET', 'contact/contacts', 'contacts', '');">Profile</a></li>
+            <li><span id="span-msg"><!-- Errors message here --></span></li>
+            <li><a href="#" onclick="javascript:send('GET', 'contact/contacts', 'contacts', 'error', null, '1');">Contacts</a></li>
+            <li><a href="#" onclick="javascript:send('GET', 'x', 'profile', null, '1');">Profile</a></li>
             <li><a href="#" onclick="javascript:deleteSession();">Logoff</a></li>
           </ul>
         </nav>
@@ -33,6 +34,9 @@
           <a href="#"><img src="pics/user9.jpg" alt="" title="User photo"></a>
           <a href="#"><img src="pics/user11.jpg" alt="" title="User photo"></a>
       </div>
+      <input type="button" value="Pegar localizacao" onclick="javascript:getLocation();">
     </div>
   </body>
 </html>
+
+<!--watchposition() https://www.tutorialspoint.com/html5/geolocation_watchposition.htm -->

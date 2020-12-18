@@ -5,9 +5,9 @@ Leonardo A Carrilho
 
 function inputShowHideLogin(){
   // Show or hide e-mail field on login screen
-  let txtId         = document.getElementById('txtId');
-  let txtPass       = document.getElementById('txtPass');
-  let txtEml        = document.getElementById('txtEml');
+  let txtId         = document.getElementById('id');
+  let txtPass       = document.getElementById('pass');
+  let txtEml        = document.getElementById('email');
   let btnForgot     = document.getElementById('btnForgot');
   let btnCadastrar  = document.getElementById('btnNew');
   let btnSend       = document.getElementById('btnSend');
@@ -29,27 +29,20 @@ function inputShowHideLogin(){
 
 }
 
-/*
-function mudaFonte(num){
-  switch (num) {
-    case 1:
-        // altera o estilo da font no body
-        //document.body.style["background-color"] = "yellow";
-        document.body.style["font-family"] = "josefinsans";
-      break;
+function showPosition(position) {
+  alert("Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude);
+}
 
-      case 2:
-        // altera o estilo da font no body
-        document.body.style["font-family"] = "leaguegothic";
-      break;
-
-      case 3:
-        // altera o estilo da font no body
-        document.body.style["font-family"] = "roboto";
-      break;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
   }
 }
 
+/*
 
 function mudaCorFundo(corHexa){
   // muda a cor do background em tempo real
@@ -71,7 +64,7 @@ function mudaCorFonte(corHexa){
 
 function backgroundRandomNoLogin(maxInteger){
   let imgIndex = Math.floor(Math.random() * maxInteger + 1);
-  document.body.style['background-image'] = 'url("/img/cover/'+imgIndex+'.png")';
+  //document.body.style['background-image'] = 'url("/img/cover/'+imgIndex+'.png")';
 }
 
 function showPage(pageName){

@@ -10,25 +10,24 @@
     <script src="js/controller.js"></script>
   </head>
   <body>
-    <!--img src="/img/cover/oba-mais-1.png" alt=""-->
-    <h2>Uhuu! mais um mais um...</h2>
-    <span></span>
-
     <div class="divMain">
       <div class="divForms">
+        <div class="pictureBevel">
+          <img src="/img/cover/oba-mais-1.png" alt="Bem-vindo(a)">
+          <label>Uhuu! mais um mais um...</label>
+        </div><!-- photoBevel -->
         <form id="form-prospect" action="#" method="post">
+            <h2>- - - #Você - - -</h2>
+              <p><input type="text"   id="name"     value="" placeholder="Nome" required><br/><span id="complement">Seu nome</span></p>
+              <p><input type="text"   id="surname"  value="" placeholder="Sobrenome"><br/><span id="complement">Seu sobrenome</span></p>
+              <p><input type="email"  id="email"    value="" placeholder="e-mail" required><br/><span id="complement">e-mail para login</span></p>
+              <p><input type="date"   id="born"     value="" placeholder="Dt nascimento" required><br/><span id="complement">Precisamos conferir se você tem idade para usar</span></p>
 
-            <h2>Sobre você:</h2>
-              <p><input type="text"   id="name"     value="teste" placeholder="Nome" required><br/><span id="complement">Seu nome</span></p>
-              <p><input type="text"   id="surname"  value="testenildo" placeholder="Sobrenome"><br/><span id="complement">Seu sobrenome</span></p>
-              <p><input type="email"  id="email"    value="teste@teste.com" placeholder="e-mail" required><br/><span id="complement">e-mail para login</span></p>
-              <p><input type="date"   id="born"     value="2002-10-10" placeholder="Dt nascimento" required><br/><span id="complement">Precisamos conferir se você tem idade para usar</span></p>
-
-            <h2>Segurança</h2>
-              <p><input type="password"   id="pass"     value="123" placeholder="Senha" required><br/><span id="complement">Escolha uma senha</span></p>
-              <p><input type="password"   id="repass"   value="123" placeholder="Repita a senha" required><br/><span id="complement">Repita a senha</span></p>
+            <h2>- - - #Segurança - - -</h2>
+              <p><input type="password"   id="pass"     value="" placeholder="Senha" required><br/><span id="complement">Escolha uma senha</span></p>
+              <p><input type="password"   id="repass"   value="" placeholder="Repita a senha" required><br/><span id="complement">Repita a senha</span></p>
               <span id="span-msg"><!-- Errors message here --></span>
-              <p><input type="button"     id="btnSend"  value="Salvar" onclick="javascript:send('POST', 'contact', 'contacts', 'form-prospect')"></p>
+              <p><input type="button"     id="btnSend"  value="Salvar" onclick="javascript:send('POST', 'contact', 'welcome', 'welcome', 'form-prospect', null)"></p>
         </form>
       </div><!-- fim divForms -->
     </div><!-- fim divMain -->

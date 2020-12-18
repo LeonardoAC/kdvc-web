@@ -19,7 +19,7 @@ function chacoalhaIluminaCampoVazio(camposVazios){
 
 function criaJson(parteDoJson){
   // Create a Json structure
-  jsonToSend = '{"sessid":"", "msg":"", "data": {'+ parteDoJson +'} }';
+  jsonToSend = '{"sessid":"'+ sessionStorage.getItem("sessid") +'", "msg":"", "data": {'+ parteDoJson +'} }';
   return jsonToSend;
 }
 
@@ -62,53 +62,69 @@ function recuperaValorDosCamposPeloNomeDoFormRetornaJson(formName){
   }//else`
 } // recuperaValorDosCamposPeloNomeDoFormRetornaJson
 
-function send(method, route, page, formName, getArguments){
+function send(method, route, pageOk, fallbackPage, formName, getArguments){
   // Setting up vars
   let xmlhttp = new XMLHttpRequest();
-  let url = "http://kd-vc.com:8000/"+route;
+  let arrSendParams = [];
   // Feedback to user
   let statusMsg = document.getElementById("span-msg");
   statusMsg.style.display = "none";
 
   xmlhttp.withCredentials = false;
+  /*  <>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      NAO ESQUECER DE FAZER A
+
+      VERIFICACAO
+
+      DOS CAMPOS VAZIOS !
+
+  <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  */
   //if (sendData != "required fields are empty"){ //
+  //console.log("Antes do switch: URL= " + arrSendParams['url'] + " | data= " + arrSendParams['data']);
+  if (method == "POST"){
+      ////// VERIFICAR SE FORM RETORNA EMPTY - CRIAR IF AQUI
+      arrSendParams['url'] = "https://kd-vc.com:8000/" + route;
+      arrSendParams['data'] = recuperaValorDosCamposPeloNomeDoFormRetornaJson(formName);
+      //console.log("saindo POST: URL= "+ arrSendParams['url'] + " | data= " + arrSendParams['data']);
+  } else if (method == "GET"){
+      arrSendParams['url']  = "https://kd-vc.com:8000/" + route + "?id=" + getArguments + "&sess=" + sessionStorage.getItem("sessid");
+      arrSendParams['data'] = "";
+      //console.log("saindo GET URL= " + arrSendParams['url'] + " | data= " + arrSendParams['data']);
+  }else{
+    console.log("Method unknown");
+  }
     xmlhttp.onreadystatechange = function() {
-      switch (method) {
-        case "POST":
-          sendData = recuperaValorDosCamposPeloNomeDoFormRetornaJson(formName);
-          if (sendData == "required fields are empty"){
-              break; // Abort the sending
-          }
-          break;
-        case "GET":
-          if (! getArguments){
-              break; // Abort the sending
-          } else {
-            sendData = url + "?" + getArguments;
-            break;
-          }
-        default:
-          alert("Method note selected");
-      } // switch
+
       if (this.readyState == 4 && this.status == 200) {
       // Reponse from server
           let jsonResponse = JSON.parse(this.responseText);
           console.log(jsonResponse); // debug
           // Store session ID
           sessionStorage.setItem("sessid", jsonResponse.sessid);
+          // Store the data
+          sessionStorage.setItem("tudo", this.responseText);
+          //var arr = JSON.stringify(jsonResponse.data);
+          //sessionStorage.setItem("data", arr);
           // Message to user
           statusMsg.innerHTML = jsonResponse.msg;
           statusMsg.style.display = "block";
           if (sessionStorage["sessid"].length == 32){
             // Go to page
-            window.location.href = "/" + page + ".html";
+            window.location.href = "/" + pageOk + ".html";
+          }
+          else{
+            // fallback page
+            window.location.href = "/" + fallbackPage + ".html";
           } // if location
         } // readyState
     } // xmlhttp
+    url = arrSendParams['url'];
+    sendParams = arrSendParams['data'];
+    //console.log("utlimo URL= " + url + " | data= " + sendParams);
     xmlhttp.open(method, url, true);
-    //xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
     //xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xmlhttp.send(sendData);
+    xmlhttp.send(sendParams);
   //} // if main
 } // function send
 
